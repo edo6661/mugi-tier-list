@@ -16,6 +16,7 @@ interface Props {
   placeholder: string;
   err: FieldError | undefined;
   className?: string;
+  type?: string;
 }
 export const CustomInputField = ({
   form,
@@ -24,6 +25,7 @@ export const CustomInputField = ({
   placeholder,
   err,
   className,
+  type,
 }: Props) => {
   return (
     <FormField
@@ -40,6 +42,7 @@ export const CustomInputField = ({
                 "border-destructive ring-offset-destructive  focus-visible:ring-0":
                   err,
               })}
+              type={type || "text"}
             />
           </FormControl>
           <FormMessage />

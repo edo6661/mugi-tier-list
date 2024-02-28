@@ -82,4 +82,7 @@
   .greedy-transition {
     @apply transition-all duration-200;
   }
+  .fl-itc {
+    @apply flex items-center;
+  }
 }

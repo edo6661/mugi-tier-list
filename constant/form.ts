@@ -8,3 +8,16 @@ export const initialValuesAddTierlist = {
   description: "",
   ownerId: "",
 };
+
+export const initialValuesRegister = {
+  username: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+  imageUrl: "",
+};
+
+export const initialValuesLogin = {
+  email: "",
+  password: "",
+};
