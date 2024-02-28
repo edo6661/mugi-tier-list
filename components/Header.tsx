@@ -4,6 +4,7 @@ import AddUser from "./user/AddUser";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserButton } from "@clerk/nextjs";
+import { SignedOut } from "@clerk/clerk-react";
 
 const Header = () => {
   const [isClient, setIsClient] = useState(false);
@@ -22,8 +23,10 @@ const Header = () => {
         </Link>
         {isClient && (
           <>
-            <UserButton />
-            <Link href="/sign-in">Login Clerk</Link>
+            <UserButton afterSignOutUrl="/" />
+            <SignedOut>
+              <Link href="/sign-in">Login Clerk</Link>
+            </SignedOut>
           </>
         )}
         <AddUser />
