@@ -1,3 +1,4 @@
+"use server";
 import { db } from "@/lib/db";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
