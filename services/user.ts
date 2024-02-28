@@ -25,7 +25,7 @@ export const getUserById = async (id: string) => {
 
 export const getCurrentUser = async (username?: string) => {
   try {
-    return await db.user.findUnique({
+    return await db.user.findFirst({
       where: {
         username: "edo",
       },

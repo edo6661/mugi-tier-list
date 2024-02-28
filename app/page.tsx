@@ -14,7 +14,7 @@ const page = async () => {
               {user.imageUrl && (
                 <Image
                   src={user.imageUrl}
-                  alt={user.username}
+                  alt={user.username!}
                   width={240}
                   height={240}
                   className=" rounded-full object-contain"
