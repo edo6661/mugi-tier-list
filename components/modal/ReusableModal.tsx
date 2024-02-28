@@ -17,9 +17,11 @@ export interface ModalType {
   children: React.ReactNode;
   trigger: string;
   title: string;
-  description?: React.ReactNode;
-  submit?: React.ReactNode;
+  description?: string;
   close?: React.ReactNode;
+  isOpen: boolean;
+  falseIsOpen: () => void;
+  trueIsOpen: () => void;
 }
 
 const ReusableModal = ({
@@ -27,20 +29,17 @@ const ReusableModal = ({
   trigger,
   title,
   description,
-  submit,
-  close,
+  falseIsOpen,
+  isOpen,
+  trueIsOpen,
 }: ModalType) => {
-  const { falseIsOpen, isOpen, trueIsOpen } = useGlobalState((state) => state);
-
-  console.log(isOpen);
-
   return (
     <Dialog open={isOpen} onOpenChange={falseIsOpen}>
       <Button variant="outline" onClick={() => trueIsOpen()}>
         {trigger}
       </Button>
       <DialogContent
-      // className="sm:max-w-[425px]"
+      // className="sm:max-w-[425px ]"
       >
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
