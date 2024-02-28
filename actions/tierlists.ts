@@ -17,6 +17,7 @@ export const createTierList = async (
       },
     });
     revalidatePath("/");
+    revalidatePath("/tierlists");
     return tierlist.id;
   } catch (err) {
     errorHandler(err, "Failed to create tierlist");
